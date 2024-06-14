@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription Cours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        img{
+          width: 100%;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0px auto;
+            background-color: #fff;
+            padding: 0px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header{
+          margin: 0px;
+          background-color: orangered;
+          width: 100%;
+          height: 150px;
+        }
+        header h1{
+          text-align: center;
+          color: white;
+          font-size: 18px;
+        }
+        
+        header h2{
+          text-align: center;
+          color: white;
+          font-size: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+<header>
+  <div class="logo"><img src="/images/Logo.jpg"></div>
+  <h1>EDDY CREOLE PRODUCTION</h1>
+  <h2>Restaurent et Ecole professionnelle</h2>
+</header>
+  <div class="content">
+    <main>
+        <h2>Inscription au Cours</h2>
+          <form action="#" method="post">
+        <div class="form-group">
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" required>
+        </div>
+        <div class="form-group">
+            <label for="prenom">Prénom:</label>
+            <input type="text" id="prenom" name="prenom" required>
+        </div>
+        <div class="form-group">
+            <label for="date_naissance">Date de Naissance:</label>
+            <input type="date" id="date_naissance" name="date_naissance" required>
+        </div>
+        <div class="form-group">
+            <label for="telephone">Téléphone:</label>
+            <input type="tel" id="telephone" name="telephone" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="adresse">Adresse:</label>
+            <input type="text" id="adresse" name="adresse" required>
+        </div>
+        <div class="form-group">
+            <label for="nom_responsable">Nom de la personne responsable:</label>
+            <input type="text" id="nom_responsable" name="nom_responsable" required>
+        </div>
+        <div class="form-group">
+            <label for="numero_responsable">Numéro de la personne responsable:</label>
+            <input type="tel" id="numero_responsable" name="numero_responsable" required>
+        </div>
+        <input type="submit" value="Soumettre">
+    </form>
+    </main>
+  </div>
+</div>
+
+<script>
+  /* send message to whatsapp*/
+    function send(){
+            var urlDeLaPage = window.location.href;
+            var titles = urlDeLaPage;
+            var encodedTitle = encodeURIComponent(titles);
+            var replacedTitle = encodedTitle.replace(/%20/g, '_');
+
+
+            console.log(replacedTitle);
+            var name = document.getElementById('name').innerHTML;
+            var name = document.getElementById('name').innerHTML;
+            var desc = "Ne manquez pas cette leçon importante sur Unitech Conseil, une petite mise à jour vous aidera à vous améliorer."
+            
+            var n = "\n"
+            var url = "https://wa.me/8098409048?text="
+
+            + decodedTitle + "%0a"
+            + n + "%0a"
+            + desc + "%0a"
+            + n + "%0a"
+            + "_Accédez gratuitement en cliquant sur le lien suivant :_" + n +"%0a" + replacedTitle + "%0a"
+            + n + "%0a"
+            + "_Pour nous aider à travailler, veuillez partager ce lien dans au moins 5 groupes._" + "%0a"
+            
+          
+            window.open(url, '_blank').focus();
+        
+            
+        } 
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-zruApR6S1gbL0OeSqjrFYseztvotdAyMBwK9aaVg6AeY3I4Wl9PrtQ/kOcvtO1PnwYFqxu3MNSXfs3lEpxdumQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="appdetails.css">
+  <link rel="stylesheet" href="/css/config.css">
+  <script async src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7979799450178267"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <a href="" id="g_image"></a>
+  <section class="bodyord">
+    <div>
+        <h1>Votre appareil n'est pas compatible</h1>
+        <p>Disponible que pour android et tablette</p>
+        <ul>
+            <h2>Pour avoir acces sur votre ordinateur</h2>
+            <li>Fait un click droid sur l'ecrant</li>
+            <li>clicquer sur <strong>INSPECTER</strong></li>
+            <li>Reduir lageur a 800px</li>
+        </ul>
+    </div>
+</section>
+
+    <section class="bodyMobile">
+          <!--menu, splash screen/Load-->
+      <section class="config">
+          <div id="mySidenav" class="sidenav">
+              <div id="menu">
+                  <div id="user-details"></div>
+              </div>
+          </div>
+          <p id="email" style="display: none;">@gmail.com</p>
+          <p id="rcoins" style="display: none;">0.55</p>
+      </section>
+      <!--Fin menu, splash screen/Load-->
+
+      <div class="container">
+        <main>
+          <h1 id="details-title">Loading...</h1>
+          <div id="details-container" class="article">
+                <h2 id="gtitle"></h2>
+                <p id="stitre"></p>
+                <img id="article-image" src="" alt="">
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : '725f10caa5ef71a6ad624c5109b76c38',
+                        'format' : 'iframe',
+                        'height' : 50,
+                        'width' : 320,
+                        'params' : {}
+                    };
+                    document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/725f10caa5ef71a6ad624c5109b76c38/invoke.js"></scr' + 'ipt>');
+                </script>
+                <p id="desc"></p>
+                <p id="lien"></p>
+                <button onclick="down()"></button>
+                
+                <div class="barlike">
+                    <div class="barlike">
+                        <div class="btncomment like">
+                            <i class="fa fa-comment"></i>
+                            <span class="count" id="commentcount"> 
+                            </span>
+                        </div>
+                    
+                        <div class="btnlike like">
+                            <button onclick="likebtn()">
+                            <i class="fa fa-thumbs-up"></i>
+                            </button>
+                            <span id="likecount"></span>
+                        </div>
+        
+                        <div class="btndislike like">
+                        <button onclick="dislikebtn()">
+                            <i class="fa fa-thumbs-down"></i>
+                        </button>
+                        <span id="dislikecount"></span>
+                        </div>
+                    </div>
+            
+            </div>
+            <button onclick="share()" class="share"><i class="fa fa-share"></i></button>
+            <div class="commentSection">
+
+                <textarea id="comment" placeholder="Add a comment"></textarea>
+                <button onclick="addComment()">Add Comment</button>
+                <div class="comment" id="comments"></div>
+            </div>
+          </div>
+          
+      </main>
+      </div>
+      <div id="splash-screen" style="display: block;">
+        <img src="/images/load.gif" alt="Splash Image">
+        </div>
+      <section>
+          <footer class="mobile-footer">
+          
+          </footer>
+      </section>
+    </section>
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+   <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+   <script src="/js/config.js" defer></script>
+  <script src="likeAndComment.js" defer></script>
+  <script src="/js/menuAndFooter.js" defer></script>
+  <script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyCvqf6mNg-FsbcU7vZf52xEi6Skp9tz3yU",
+    authDomain: "signup-286f7.firebaseapp.com",
+    databaseURL: "https://signup-286f7-default-rtdb.firebaseio.com",
+    projectId: "signup-286f7",
+    storageBucket: "signup-286f7.appspot.com",
+    messagingSenderId: "579225916993",
+    appId: "1:579225916993:web:f4f70c8c24584a770018c0",
+    measurementId: "G-RH5HF2F7DN"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+ 
+    var presentationsRef = database.ref('App');
+    var presentationKey;  // Declare presentationKey in a broader scope
+    var key;  // Declare key in a broader scope
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const title = urlParams.get('title');
+    const decodedTitle = decodeURIComponent(title);
+
+    presentationsRef.once('value', function(snapshot) {
+      var presentationsData = snapshot.val();
+      console.log(presentationsData);
+
+      var detailsContainer = document.getElementById('details-container');
+      var detailsTitle = document.getElementById('details-title');
+
+      // Loop through each presentation
+        // Loop through each presentation
+        for (var currentKey in presentationsData) {
+        var presentationData = presentationsData[currentKey];
+
+        var imageArticle = document.getElementById('article-image');
+        var h2 = document.getElementById('gtitle');
+        var stitre = document.getElementById('stitre');
+        var desc = document.getElementById('desc');
+        var likecount = document.getElementById('likecount');
+        var dislikecount = document.getElementById('dislikecount');
+        var commentCount = document.getElementById('commentcount');
+
+        // Check if the title matches
+        if (presentationData.Title === decodedTitle) {
+            presentationKey = currentKey;
+            document.getElementById('splash-screen').style.display = 'none';
+            document.querySelector('.commentSection').style.display = 'block';
+
+            var showImage = document.getElementById('g_image');
+            showImage.href = presentationData.Image;
+
+            // Display details
+            detailsTitle.textContent = presentationData.Title;
+            h2.textContent = presentationData.Title;
+            imageArticle.src = presentationData.LinkImage;
+            stitre.textContent = presentationData.SousTitle;
+            desc.innerHTML = presentationData.Description;
+            likecount.textContent = presentationData.likes ? presentationData.likes : '0';
+            dislikecount.textContent = presentationData.dislikes ? presentationData.dislikes : '0';
+            commentCount.textContent = presentationData.Zcomments ? Object.keys(presentationData.Zcomments).length : '0';
+
+            console.log(presentationData.LinkImage);
+            break; // Stop the loop since we found the matching presentation
+        }
+      }
+    });
+
+
+    
+
+
+ /* send message to whatsapp*/
+    function share(){
+            var urlDeLaPage = window.location.href;
+            var titles = urlDeLaPage;
+            var encodedTitle = encodeURIComponent(titles);
+            var replacedTitle = encodedTitle.replace(/%20/g, '_');
+
+
+            console.log(replacedTitle);
+            var name = document.getElementById('name').innerHTML;
+            var name = document.getElementById('name').innerHTML;
+            var desc = "Ne manquez pas cette leçon importante sur Unitech Conseil, une petite mise à jour vous aidera à vous améliorer."
+            
+            var n = "\n"
+            var url = "https://wa.me/50947112618?text="
+
+            + decodedTitle + "%0a"
+            + n + "%0a"
+            + desc + "%0a"
+            + n + "%0a"
+            + "_Accédez gratuitement en cliquant sur le lien suivant :_" + n +"%0a" + replacedTitle + "%0a"
+            + n + "%0a"
+            + "_Pour nous aider à travailler, veuillez partager ce lien dans au moins 5 groupes._" + "%0a"
+            
+          
+            window.open(url, '_blank').focus();
+        
+            
+        } 
+      
+  </script>
+
+
+<script>
+
+
+  //---------------------------------------Boutton like et dislike--------//
+ function likebtn() {
+   console.log(decodedTitle);
+  var titre = document.getElementById('details-title');
+  var title = titre;
+ 
+   var postRef = database.ref('App/' + decodedTitle);
+   var likecount = document.getElementById('likecount');
+   var dislikecount = document.getElementById('dislikecount');
+ 
+   postRef.transaction(function (data) {
+       if (data) {
+           data.likes = (data.likes || 0) + 1;
+           data.dislikes = data.dislikes || 0;
+       } else {
+           data = { likes: 1, dislikes: 0 };
+       }
+       return data;
+   }, function (error, committed, snapshot) {
+       if (committed) {
+           updateCounts(likecount, dislikecount,  snapshot.val());
+       } else {
+           console.error('Transaction failed:', error);
+       }
+   });
+ }
+ 
+ function dislikebtn() {
+   console.log(decodedTitle);
+  var titre = document.getElementById('details-title');
+  var title = titre;
+ 
+   var postRef = database.ref('App/' + decodedTitle);
+   var likecount = document.getElementById('likecount');
+   var dislikecount = document.getElementById('dislikecount');
+ 
+   postRef.transaction(function (data) {
+       if (data) {
+           data.dislikes = (data.dislikes || 0) + 1;
+           data.likes = data.likes || 0;
+           
+       } else {
+           data = { likes: 0, dislikes: 1 };
+       }
+       return data;
+   }, function (error, committed, snapshot) {
+       if (committed) {
+           updateCounts(likecount, dislikecount, snapshot.val());
+       } else {
+           console.error('Transaction failed:', error);
+       }
+   });
+ }
+ 
+ function updateCounts(likeCountElement, dislikeCountElement, data) {
+   var likecount = document.getElementById('likecount');
+   var dislikecount = document.getElementById('dislikecount');
+     console.log('Updating counts:', data);
+     likeCountElement.innerText = data.likes;
+     dislikeCountElement.innerText = data.dislikes;
+ }
+ 
+ 
+ // Assuming you have elements with IDs 'likecount' and 'dislikecount' in your HTML
+ var likeCountElement = document.getElementById('likecount');
+ var dislikeCountElement = document.getElementById('dislikecount');
+ updateCounts(likeCountElement, dislikeCountElement, { likes: 0, dislikes: 0 });
+ 
+ //----------------------fin button  like e dislike----------------------------------//
+ </script>
+
+</body>
+</html>
