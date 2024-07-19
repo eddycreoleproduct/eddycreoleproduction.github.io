@@ -1,0 +1,368 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+}
+*{
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+}
+
+.container {
+    border: 1px solid blue;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    padding: 0px auto;
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 0px;
+    height: 50vh;
+}
+
+.headercontent{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin:auto;
+    padding: 0px;
+    gap: 10px;
+
+}
+
+.headercontent div{
+    width: 50%;
+    display: block;
+}
+.headercontent div:nth-child(2){
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    height: auto;
+    max-width: 250px;
+}
+
+.headercontent h1 {
+    margin: 0;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    text-align: left;
+}
+.headercontent h2{
+    margin: 0;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    text-align: left;
+}
+.headercontent ul{
+    margin: 0px;
+    padding: 2px;
+}
+.headercontent ul li{
+    margin: 2px;
+    list-style: none;
+}
+
+.home{
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+.home h3{
+    font-size: 36px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.home p{
+    text-align: center;
+}
+
+.home button{
+    font-size: 24px;
+    background-color: black;
+    border: none;
+    padding: 10px;
+    color: white;
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.sectionCard{
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+
+.sectionCard > div{
+    width: 90%;
+    padding: 5px;
+    border-radius: 0;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+@media screen and (max-width: 360px) {
+    header{
+        height: 100%;
+    }
+    /* Styles spécifiques pour les petits écrans */
+    .container {
+        width: 100%;
+        display: block;
+    }
+    .content {
+        width: 100%;
+        display: block;
+    }
+    main{
+        width: fit-content;
+        overflow-x: hidden;
+    }
+
+    /* Ajustements pour header et headercontent */
+    .headercontent {
+        display: block;
+        text-align: center;
+    }
+    .headercontent div{
+        width: 100%;
+    }
+    .headercontent div:nth-child(2) {
+        width: 100%; /* ou ajustez selon votre besoin */
+        height: auto; /* ou ajustez selon votre besoin */
+        border-radius: 0; /* ou ajustez selon votre besoin */
+        border: none; /* ou ajustez selon votre besoin */
+        margin: auto; /* ou ajustez selon votre besoin */
+    }
+
+    /* Ajustements pour les polices et dimensions spécifiques */
+    .headercontent h1, .headercontent h2 {
+        font-size: 6vw;
+        text-align: center;
+    }
+
+    .headercontent p, .headercontent ul li {
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    .home h3 {
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    .home p {
+        font-size: 12px;
+        text-align: justify;
+        margin: 2px 10px;
+    }
+
+    .home button {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    /* Ajustements pour les sections card */
+    .sectionCard {
+        display: block;
+        margin: 5px auto;
+        gap: 0px;
+    }
+
+    .sectionCard > div{
+        max-width: 100%;
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        border-radius: 0px;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    }
+}
+
+/* Media Queries pour les petits écrans */
+@media screen and (max-width: 480px) {
+    header{
+        height: 100%;
+    }
+    /* Styles spécifiques pour les petits écrans */
+    .container {
+        width: 100%;
+        display: block;
+    }
+    .content {
+        width: 100%;
+        display: block;
+    }
+    main{
+        width: fit-content;
+        overflow-x: hidden;
+    }
+
+    /* Ajustements pour header et headercontent */
+    .headercontent {
+        display: block;
+        text-align: center;
+    }
+    .headercontent div{
+        width: 100%;
+    }
+    .headercontent div:nth-child(2) {
+        width: 100%; /* ou ajustez selon votre besoin */
+        height: auto; /* ou ajustez selon votre besoin */
+        border-radius: 0; /* ou ajustez selon votre besoin */
+        border: none; /* ou ajustez selon votre besoin */
+        margin: auto; /* ou ajustez selon votre besoin */
+    }
+
+    /* Ajustements pour les polices et dimensions spécifiques */
+    .headercontent h1, .headercontent h2 {
+        font-size: 6vw;
+        text-align: center;
+    }
+
+    .headercontent p, .headercontent ul li {
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    .home h3 {
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    .home p {
+        font-size: 12px;
+        text-align: justify;
+        margin: 2px 10px;
+    }
+
+    .home button {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    /* Ajustements pour les sections card */
+    .sectionCard {
+        display: block;
+        margin: 5px auto;
+        gap: 0px;
+    }
+
+    .sectionCard > div{
+        max-width: 100%;
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        border-radius: 0px;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header{
+        height: 100%;
+    }
+    /* Styles spécifiques pour les petits écrans */
+    .container {
+        width: 100%;
+        display: block;
+    }
+    .content {
+        width: 100%;
+        display: block;
+    }
+    main{
+        width: fit-content;
+        overflow-x: hidden;
+    }
+
+    /* Ajustements pour header et headercontent */
+    .headercontent {
+        display: block;
+        text-align: center;
+    }
+    .headercontent div{
+        width: 100%;
+    }
+    .headercontent div:nth-child(2) {
+        width: 100%; /* ou ajustez selon votre besoin */
+        height: auto; /* ou ajustez selon votre besoin */
+        border-radius: 0; /* ou ajustez selon votre besoin */
+        border: none; /* ou ajustez selon votre besoin */
+        margin: auto; /* ou ajustez selon votre besoin */
+    }
+
+    /* Ajustements pour les polices et dimensions spécifiques */
+    .headercontent h1, .headercontent h2 {
+        font-size: 6vw;
+        text-align: center;
+    }
+
+    .headercontent p, .headercontent ul li {
+        font-size: 3vw;
+        text-align: center;
+    }
+
+    .home h3 {
+        font-size: 5vw;
+        text-align: center;
+    }
+
+    .home p {
+        font-size: 12px;
+        text-align: justify;
+        margin: 2px 10px;
+    }
+
+    .home button {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    /* Ajustements pour les sections card */
+    .sectionCard {
+        display: block;
+        margin: 5px auto;
+        gap: 0px;
+    }
+
+    .sectionCard > div{
+        max-width: 100%;
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        border-radius: 0px;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    }
+}
