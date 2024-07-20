@@ -3,154 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/inscription.css">
     <title>Inscription Cours</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        img {
-            width: 100%;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0px auto;
-            background-color: #fff;
-            padding: 0px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        header {
-            margin: 0px;
-            background-color: orangered;
-            width: 100%;
-            height: 150px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        header h1, header h2 {
-            color: white;
-            font-size: 18px;
-        }
-
-        .content {
-            padding: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="date"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
 
 <div class="container">
-    <header>
+    <header style="display: none;">
         <div class="logo"><img src="/images/Logo.jpg"></div>
         <h1>EDDY CREOLE PRODUCTION</h1>
         <h2>Restaurant et École professionnelle</h2>
     </header>
     <div class="content">
-        <h2>Inscription au Cours</h2>
-        <form id="inscriptionForm" action="#" method="post" onsubmit="sendWhatsAppMessage(event)">
-            <div class="form-group">
-                <label for="nom">Nom:</label>
-                <input type="text" id="nom" name="nom" required>
+        <div class="title">
+            <h2>Remplire le formulaire d'inscription</h2>
+        <p>
+            Eddy Créole Production est une école haïtienne qui enseigne en s'appuyant sur la base haïtienne.
+        </p>
+        <button class="opendetails" onclick="opendetails()">Voire plus details sur les cours</button>
+        <button class="closedtails" onclick="closedetails()">Je veux m'inscrire</button>
+        </div>
+        <hr>
+        <div class="detailsForm">
+            <div class="details">
+                <ul>
+                    <h4>Infomatique bureautique</h4><hr>
+                    <li>Inscription : <span>RD $1000</span><i>
+                    <li>Frais mensuel : <span>RD $1000</span></li>
+                    <i>
+                        Maillot, livre inclus dans le frais d'inscription
+                    </i>
+                </ul>
+
+                <ul>
+                    <h4>Anglais et espagnole</h4>
+                    <li>Inscription : <span>RD $1000</span></li>
+                    <li>Frais mensuel : <span>RD $1000</span></li>
+                    <i>
+                        Maillot, livre inclus dans le frais d'inscription
+                    </i>
+                </ul>
+    
+                <ul>
+                    <h4>Creation site web</h4><hr>
+                    <li>Inscription : <span>RD $500</span><i>
+                    <li>Frais mensuel : <span>RD $500</span></li>
+                    <i>
+                        Programmation web(Html & Css, CMS Artisteer)
+                    </i>
+                </ul>
             </div>
-            <div class="form-group">
-                <label for="prenom">Prénom:</label>
-                <input type="text" id="prenom" name="prenom" required>
-            </div>
-            <div class="form-group">
-                <label for="date_naissance">Date de Naissance:</label>
-                <input type="date" id="date_naissance" name="date_naissance" required>
-            </div>
-            <div class="form-group">
-                <label for="telephone">Téléphone:</label>
-                <input type="tel" id="telephone" name="telephone" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="adresse">Adresse:</label>
-                <input type="text" id="adresse" name="adresse" required>
-            </div>
-            <div class="form-group">
+           <div>
+            <form id="inscriptionForm" action="#" method="post">
+                <label for="nom">Nom Complet</label>
+                <div class="form-group flex">
+                    <div><input type="text" id="nom" name="nom" placeholder="Enter votre nom" required></div>
+                    <div><input type="text" id="prenom" name="prenom" placeholder="Enter votre prenom" required></div>
+                </div>
+            
+                <label for="email">Telephone et Email</label>
+                <div class="form-group flex">
+                    <div><input type="tel" id="telephone" name="telephone" placeholder="Enter votre numero de telephone" required></div>
+                    <div><input type="email" id="email" name="email" placeholder="Enter votre Email" required></div>
+                </div>
+            
+                <label for="adresse">Date de Naissance & Adresse:</label>
+                <div class="form-group flex">
+                    <div><input type="date" id="date_naissance" name="date_naissance" placeholder="Date de Naissance" required></div>
+                    <div><input type="text" id="adresse" name="adresse" placeholder="Enter votre Adresse" required></div>
+                </div>
+            
+                <div class="form-group flex">
+                    <div>
+                        <select id="level">
+                            <option value="Debutant">Debutant</option>
+                            <option value="Intermediaire">Intermediaire</option>
+                            <option value="Avancee">Avancee</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select id="CourFormation">
+                            <option value="Inf.B">Informatique Bureautique</option>
+                            <option value="CSW">Creation Site Web</option>
+                            <option value="ANG">Anglais</option>
+                            <option value="ES">Espagnole</option>
+                            <option value="F.Ecxel">Formation Ecxel</option>
+                            <option value="F.PPT">Formation Powerpoint</option>
+                            <option value="F.RSB">Formation Reparation Systeme Bureautique</option>
+                        </select>
+                    </div>
+                </div>
+            
                 <label for="nom_responsable">Nom de la personne responsable:</label>
-                <input type="text" id="nom_responsable" name="nom_responsable" required>
-            </div>
-            <div class="form-group">
-                <label for="numero_responsable">Numéro de la personne responsable:</label>
-                <input type="tel" id="numero_responsable" name="numero_responsable" required>
-            </div>
-            <input type="submit" value="Soumettre">
-        </form>
+                <div class="form-group flex">
+                    <div><input type="text" id="nom_responsable" name="nom_responsable" placeholder="Personne responsablerequired" required></div>
+                    <div><input type="tel" id="numero_responsable" name="numero_responsable" placeholder="Telephone personne responsable" required></div>
+                </div>
+            
+                <input type="submit" value="Soumettre">
+            </form>
+            
+           </div>
+        </div>
     </div>
 </div>
-
-<script>
-    function sendWhatsAppMessage(event) {
-        event.preventDefault(); // Empêcher le formulaire de se soumettre normalement
-
-        var nom = document.getElementById('nom').value;
-        var prenom = document.getElementById('prenom').value;
-        var date_naissance = document.getElementById('date_naissance').value;
-        var telephone = document.getElementById('telephone').value;
-        var email = document.getElementById('email').value;
-        var adresse = document.getElementById('adresse').value;
-        var nom_responsable = document.getElementById('nom_responsable').value;
-        var numero_responsable = document.getElementById('numero_responsable').value;
-
-        var message = `
-            Nom: ${nom}
-            Prénom: ${prenom}
-            Date de Naissance: ${date_naissance}
-            Téléphone: ${telephone}
-            Email: ${email}
-            Adresse: ${adresse}
-            Nom de la personne responsable: ${nom_responsable}
-            Numéro de la personne responsable: ${numero_responsable}
-        `;
-
-        var url = `https://wa.me/8098409048?text=${encodeURIComponent(message)}`;
-
-        window.open(url, '_blank').focus();
-    }
-</script>
-
+    <!-- Include Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    
+    <script src="/js/asset.js" defer></script>
+    <script src="/js/script.js" defer></script>
 </body>
 </html>
