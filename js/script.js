@@ -1,10 +1,15 @@
 function opendetails(){
-    document.querrySelector('.details').style.display='block';
-    document.getElementById('inscriptionForm').style.display='none';
+    document.querySelector('.details').style.display='block';
+    document.querySelector('.closed').style.display='block';
+    document.querySelector('.opend').style.display='none';
+    document.querySelector('.inscriptionform').style.display='none';
 }
 
 function closedetails(){
-    
+    document.querySelector('.details').style.display='none';
+    document.querySelector('.closed').style.display='none';
+    document.querySelector('.opend').style.display='block';
+    document.querySelector('.inscriptionform').style.display='block';
 }
 
 
